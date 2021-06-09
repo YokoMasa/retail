@@ -1,20 +1,21 @@
 package com.retailapp.proto.exception;
 
 public class AppException extends Exception {
-    
-    private String message;
 
-    public String getMessage() {
-        return message;
+    private String errorCode;
+
+    public String getErrorCode() {
+        return errorCode;
     }
-
+    
     @Override
     public String toString() {
-        return message;
+        return getMessage();
     }
 
-    public AppException(String message) {
-        this.message = message;
+    public AppException(String errorCode, String message) {
+        super(message);
+        this.errorCode = errorCode;
     }
 
 }
